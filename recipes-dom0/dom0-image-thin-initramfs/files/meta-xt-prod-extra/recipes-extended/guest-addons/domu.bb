@@ -1,6 +1,5 @@
-SUMMARY = "A config file and a run script for a minimal  domain"
-DESCRIPTION = "A config file and a run script for a minimal
- domain"
+SUMMARY = "A config file and a run script for a minimal domain"
+DESCRIPTION = "A config file and a run script for a minimal domain"
 
 require inc/xt_shared_env.inc
 
