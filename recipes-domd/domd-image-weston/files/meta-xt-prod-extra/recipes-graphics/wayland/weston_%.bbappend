@@ -3,7 +3,6 @@ FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
 EXTRA_OECONF_append = " --enable-ivi-shell"
 
 SRC_URI_append = "file://weston-seats.rules \
-                  file://add_screen_remove_layer_API.patch \
 "
 
 FILES_${PN} += " \

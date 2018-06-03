@@ -35,7 +35,7 @@
 #MACHINE ?= "edgerouter"
 #
 # This sets the default machine to be qemux86 if no other machine is selected:
-MACHINE ??= "salvator-x"
+MACHINE ??= "salvator-x-h3-4x2g-xt"
 
 #
 # Where to place downloads
@@ -105,7 +105,7 @@ DISTRO ?= "poky"
 #  - 'package_rpm' for rpm style packages
 # E.g.: PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # We default to rpm:
-PACKAGE_CLASSES ?= "package_rpm"
+PACKAGE_CLASSES ?= "package_ipk"
 
 #
 # SDK target architecture
@@ -247,20 +247,20 @@ SDKIMAGE_FEATURES_append = " staticdev-pkgs"
 BBMASK = "meta-linaro/meta-optee/recipes-security/optee"
 
 # Enable Gfx Pkgs
-MACHINE_FEATURES_append = " gsx"
+#MACHINE_FEATURES_append = " gsx"
 MULTI_PROVIDER_WHITELIST += "virtual/libgl virtual/egl virtual/libgles1 virtual/libgles2"
 
 # for Wayland/Weston
 DISTRO_FEATURES_NATIVESDK_append = " wayland"
 DISTRO_FEATURES_append = " pam wayland"
-PREFERRED_PROVIDER_virtual/libgles1 = ""
-PREFERRED_PROVIDER_virtual/libgles2 = "gles-user-module"
-PREFERRED_PROVIDER_virtual/egl = "libegl"
-PREFERRED_PROVIDER_virtual/libgl = ""
-PREFERRED_PROVIDER_virtual/mesa = ""
+PREFERRED_PROVIDER_virtual/libgles1 = "mesa"
+PREFERRED_PROVIDER_virtual/libgles2 = "mesa"
+PREFERRED_PROVIDER_virtual/egl = "mesa"
+PREFERRED_PROVIDER_virtual/libgl = "mesa"
+PREFERRED_PROVIDER_virtual/mesa = "mesa"
 PREFERRED_PROVIDER_libgbm = "libgbm"
 PREFERRED_PROVIDER_libgbm-dev = "libgbm"
-BBMASK .= "|mesa-gl"
+#BBMASK .= "|mesa-gl"
 
 # Enable Multimedia features
 #MACHINE_FEATURES_append = " multimedia"
@@ -376,7 +376,7 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 #DISTRO_FEATURES_append = " use_eva_pkg"
 
 # Configuration for ivi-shell and ivi-extension
-DISTRO_FEATURES_append = " ivi-shell"
+#DISTRO_FEATURES_append = " ivi-shell"
 
 # Configuration for USB 3.0
 #MACHINE_FEATURES_append = " usb3"
@@ -397,3 +397,21 @@ DISTRO_FEATURES_append = " virtualization"
 MACHINEOVERRIDES .= ":rcar"
 
 DISTRO_FEATURES_remove = " x11 gtk gobject-introspection-data wifi nfc bluetooth irda zeroconf 3g"
+DL_DIR = "/mnt/work/prod-rtbench/build/tmp/downloads"
+SSTATE_DIR = "/mnt/work/prod-rtbench/build/sstate-cache/domd-image-weston"
+DEPLOY_DIR = "/mnt/work/prod-rtbench/build/tmp/deploy/domd-image-weston"
+LOG_DIR = "/mnt/work/prod-rtbench/build/tmp/log/domd-image-weston"
+BUILDHISTORY_DIR = "/mnt/work/prod-rtbench/build/tmp/buildhistory/domd-image-weston"
+XT_POPULATE_SSTATE_CACHE = "0"
+XT_SHARED_ROOTFS_DIR = "/mnt/work/prod-rtbench/build/tmp/shared_rootfs"
+XT_SSTATE_CACHE_MIRROR_DIR = "/mnt/work/prod-rtbench/build/tmp/sstate-cache"
+INHERIT += "buildhistory"
+BUILDHISTORY_COMMIT = "1"
+PREFERRED_VERSION_xen = "4.10.0+git%"
+PREFERRED_VERSION_u-boot_rcar = "v2015.04%"
+#PREFERRED_VERSION_gles-user-module = "1.9"
+#PREFERRED_VERSION_gles-kernel-module = "1.9"
+#PREFERRED_VERSION_gles-module-egl-headers = "1.9"
+BB_DANGLINGAPPENDS_WARNONLY = "yes"
+SERIAL_CONSOLE = "115200 hvc0"
+DEFAULT_TIMEZONE = "US/Pacific"
