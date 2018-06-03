@@ -14,10 +14,8 @@ IMAGE_INSTALL_append = " \
 "
 python __anonymous () {
     guests = d.getVar("XT_GUESTS_INSTALL", True).split()
-    if "doma" in guests :
-        d.appendVar("IMAGE_INSTALL", " doma doma-run doma-install-artifacts")
-    if "domf" in guests :
-        d.appendVar("IMAGE_INSTALL", " domf domf-run domf-install-artifacts")
+    if "domu" in guests :
+        d.appendVar("IMAGE_INSTALL", " domu domu-run domu-install-artifacts")
     if "domr" in guests :
         d.appendVar("IMAGE_INSTALL", " domr domr-run domr-install-artifacts")
 }
