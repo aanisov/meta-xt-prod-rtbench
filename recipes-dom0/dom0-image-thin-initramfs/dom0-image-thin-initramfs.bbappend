@@ -50,7 +50,7 @@ add_to_local_conf() {
     # so still set up the console on our own
     base_update_conf_value ${local_conf} SERIAL_CONSOLE "115200 hvc0"
 
-    base_update_conf_value ${local_conf} PREFERRED_VERSION_xen "4.10.0+git\%"
+    base_update_conf_value ${local_conf} PREFERRED_VERSION_xen "4.11.0+git\%"
 
     base_update_conf_value ${local_conf} XT_GUESTS_INSTALL "${XT_GUESTS_INSTALL}"
 }
