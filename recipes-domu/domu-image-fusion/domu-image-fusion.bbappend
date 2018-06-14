@@ -11,9 +11,14 @@ XT_QUIRK_UNPACK_SRC_URI += " \
     file://meta-xt-prod-extra;subdir=repo \
 "
 
+XT_BB_IMAGE_TARGET ?= "core-image-weston"
+
 XT_QUIRK_BB_ADD_LAYER_append = " \
-    meta-golang \
     meta-xt-prod-extra \
+"
+
+XT_QUIRK_BB_ADD_LAYER_remove = " \
+    meta-virtualization \
 "
 ################################################################################
 # Generic ARMv8
@@ -22,14 +27,10 @@ SRC_URI += " \
     repo://github.com/xen-troops/manifests;protocol=https;branch=next;manifest=prod_devel/domf.xml;scmdata=keep \
 "
 
-SRC_URI += " \
-    git://github.com/madisongh/meta-golang.git;protocol=https;destsuffix=repo/meta-golang;branch=rocko;name=metago \
-"
-
 SRCREV_metago = "${AUTOREV}"
 
-XT_BB_LAYERS_FILE = "meta-xt-prod-extra/doc/bblayers.conf.domf-image-minimal"
-XT_BB_LOCAL_CONF_FILE = "meta-xt-prod-extra/doc/local.conf.domf-image-minimal"
+XT_BB_LAYERS_FILE = "meta-xt-prod-extra/doc/bblayers.conf.domf-image-weston"
+XT_BB_LOCAL_CONF_FILE = "meta-xt-prod-extra/doc/local.conf.domf-image-weston"
 
 configure_versions() {
     local local_conf="${S}/build/conf/local.conf"

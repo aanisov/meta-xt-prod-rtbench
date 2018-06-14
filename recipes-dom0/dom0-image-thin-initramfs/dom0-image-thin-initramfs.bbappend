@@ -4,13 +4,11 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/../../inc:"
 do_configure[depends] += "domd-image-weston:do_domd_install_machine_overrides"
 do_compile[depends] += "domd-image-weston:do_${BB_DEFAULT_TASK}"
 
-XT_GUESTS_BUILD ?= "doma domf"
-XT_GUESTS_INSTALL ?= "doma domf"
+XT_GUESTS_BUILD ?= "domf"
+XT_GUESTS_INSTALL ?= "domf"
 
 python __anonymous () {
     guests = d.getVar('XT_GUESTS_BUILD', True).split()
-    if "doma" in guests :
-        d.appendVarFlag("do_compile", "depends", " domu-image-android:do_${BB_DEFAULT_TASK} ")
     if "domf" in guests :
         d.appendVarFlag("do_compile", "depends", " domu-image-fusion:do_${BB_DEFAULT_TASK} ")
     if "domr" in guests :
