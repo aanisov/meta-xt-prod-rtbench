@@ -4,17 +4,17 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 # Renesas R-Car
 ################################################################################
 
-XEN_REL_rcar = "4.10"
+XEN_REL_rcar = "4.11"
 PV = "${XEN_REL}.0+git${SRCPV}"
 SRCREV_rcar = "${AUTOREV}"
 
-SRC_URI_rcar = "git://github.com/xen-troops/xen.git;protocol=https;branch=rel-RELEASE-4.10.0-xt0.3.coproc_remove"
+SRC_URI_rcar = "git://github.com/aanisov/xen.git;protocol=https;branch=4.11-unstable"
 
 ################################################################################
 # Generic
 ################################################################################
 
-FLASK_POLICY_FILE = "xenpolicy-${XEN_REL}.0"
+FLASK_POLICY_FILE = "xenpolicy-${XEN_REL}-rc"
 FILES_${PN}-flask = " \
     /boot/${FLASK_POLICY_FILE} \
 "
