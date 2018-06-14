@@ -35,7 +35,7 @@
 #MACHINE ?= "edgerouter"
 #
 # This sets the default machine to be qemux86 if no other machine is selected:
-MACHINE ??= "salvator-x"
+MACHINE ??= "salvator-x-h3-4x2g-xt"
 
 #
 # Where to place downloads
@@ -247,20 +247,18 @@ SDKIMAGE_FEATURES_append = " staticdev-pkgs"
 BBMASK = "meta-linaro/meta-optee/recipes-security/optee"
 
 # Enable Gfx Pkgs
-MACHINE_FEATURES_append = " gsx"
 MULTI_PROVIDER_WHITELIST += "virtual/libgl virtual/egl virtual/libgles1 virtual/libgles2"
 
 # for Wayland/Weston
 DISTRO_FEATURES_NATIVESDK_append = " wayland"
 DISTRO_FEATURES_append = " pam wayland"
-PREFERRED_PROVIDER_virtual/libgles1 = ""
-PREFERRED_PROVIDER_virtual/libgles2 = "gles-user-module"
-PREFERRED_PROVIDER_virtual/egl = "libegl"
+PREFERRED_PROVIDER_virtual/libgles1 = "mesa"
+PREFERRED_PROVIDER_virtual/libgles2 = "mesa"
+PREFERRED_PROVIDER_virtual/egl = "mesa"
 PREFERRED_PROVIDER_virtual/libgl = ""
-PREFERRED_PROVIDER_virtual/mesa = ""
+PREFERRED_PROVIDER_virtual/mesa = "mesa"
 PREFERRED_PROVIDER_libgbm = "libgbm"
 PREFERRED_PROVIDER_libgbm-dev = "libgbm"
-BBMASK .= "|mesa-gl"
 
 # Enable Multimedia features
 #MACHINE_FEATURES_append = " multimedia"
@@ -374,9 +372,6 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 
 # Evaluation packages
 #DISTRO_FEATURES_append = " use_eva_pkg"
-
-# Configuration for ivi-shell and ivi-extension
-DISTRO_FEATURES_append = " ivi-shell"
 
 # Configuration for USB 3.0
 #MACHINE_FEATURES_append = " usb3"

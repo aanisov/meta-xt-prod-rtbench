@@ -1,7 +1,6 @@
 IMAGE_INSTALL_append = " \
     pulseaudio \
     alsa-utils \
-    wayland-ivi-extension \
     packagegroup-xt-core-guest-addons \
     packagegroup-xt-core-xen \
     packagegroup-xt-core-pv \
@@ -9,8 +8,6 @@ IMAGE_INSTALL_append = " \
     kernel-modules \
     kmscube \
     optee-os \
-    sensors-emulator \
-    displaymanager \
 "
 
 # Configuration for ARM Trusted Firmware

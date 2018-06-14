@@ -18,33 +18,16 @@ SRC_URI_append_rcar = " \
 DEPLOYDIR="${XT_DIR_ABS_SHARED_BOOT_DOMD}"
 
 ##############################################################################
-# Salvator-XS H3
-###############################################################################
-SRC_URI_append_salvator-xs-h3-xt = " \
-    file://r8a7795-salvator-xs-dom0.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
-    file://r8a7795-salvator-xs-domd.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
-    file://r8a7795-salvator-xs-doma.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
-"
-
-KERNEL_DEVICETREE_salvator-xs-h3-xt = " \
-    renesas/r8a7795-salvator-xs-dom0.dtb \
-    renesas/r8a7795-salvator-xs-domd.dtb \
-    renesas/r8a7795-salvator-xs-doma.dtb \
-"
-
-##############################################################################
 # Salvator-X H3 ES3.0 4x2G
 ###############################################################################
 SRC_URI_append_salvator-x-h3-4x2g-xt = " \
     file://r8a7795-salvator-x-4x2g-dom0.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
     file://r8a7795-salvator-x-4x2g-domd.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
-    file://r8a7795-salvator-x-4x2g-doma.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
 "
 
 KERNEL_DEVICETREE_salvator-x-h3-4x2g-xt = " \
     renesas/r8a7795-salvator-x-4x2g-dom0.dtb \
     renesas/r8a7795-salvator-x-4x2g-domd.dtb \
-    renesas/r8a7795-salvator-x-4x2g-doma.dtb \
 "
 
 
