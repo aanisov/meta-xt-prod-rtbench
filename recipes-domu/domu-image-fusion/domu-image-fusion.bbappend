@@ -19,6 +19,7 @@ XT_QUIRK_BB_ADD_LAYER_append = " \
 
 XT_QUIRK_BB_ADD_LAYER_remove = " \
     meta-virtualization \
+    meta-xt-images-domx \
 "
 ################################################################################
 # Generic ARMv8

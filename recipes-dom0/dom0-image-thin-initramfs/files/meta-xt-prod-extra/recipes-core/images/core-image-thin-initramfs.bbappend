@@ -15,12 +15,10 @@ IMAGE_INSTALL_append = " \
     domd-install-artifacts \
 "
 
-XT_GUESTS_INSTALL = "doma domf"
+XT_GUESTS_INSTALL = "domf domr"
 
 python __anonymous () {
     guests = d.getVar("XT_GUESTS_INSTALL", True).split()
-    if "doma" in guests :
-        d.appendVar("IMAGE_INSTALL", " doma doma-run doma-install-artifacts")
     if "domf" in guests :
         d.appendVar("IMAGE_INSTALL", " domf domf-run domf-install-artifacts")
     if "domr" in guests :
