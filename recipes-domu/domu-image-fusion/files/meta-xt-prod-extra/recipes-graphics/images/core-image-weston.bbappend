@@ -5,12 +5,6 @@ IMAGE_INSTALL_append = " \
     kmscube \
 "
 
-# Configuration for ARM Trusted Firmware
-EXTRA_IMAGEDEPENDS += " arm-trusted-firmware"
-
-# u-boot
-DEPENDS += " u-boot"
-
 # Do not support secure environment
 IMAGE_INSTALL_remove = " \
     optee-linuxdriver \

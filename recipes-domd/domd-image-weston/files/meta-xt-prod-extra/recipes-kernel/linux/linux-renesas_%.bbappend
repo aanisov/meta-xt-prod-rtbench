@@ -2,9 +2,9 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 require inc/xt_shared_env.inc
 
-RENESAS_BSP_URL = "git://github.com/xen-troops/linux.git"
+RENESAS_BSP_URL = "git://github.com/andr2000/linux.git"
 
-BRANCH = "yocto-3.7-migration"
+BRANCH = "pr_pv_drv_upstream_for_yocto_3_7_migration"
 SRCREV = "${AUTOREV}"
 SRC_URI_append = " \
     file://defconfig \

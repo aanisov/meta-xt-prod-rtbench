@@ -14,9 +14,6 @@ SRC_URI = "\
 
 S = "${WORKDIR}"
 
-DOMF_ALLOWED_PCPUS_salvator-x-m3-xt = "2-5"
-DOMF_ALLOWED_PCPUS_salvator-x-h3-xt = "4-7"
-DOMF_ALLOWED_PCPUS_salvator-xs-h3-xt = "4-7"
 DOMF_ALLOWED_PCPUS_salvator-x-h3-4x2g-xt = "4-7"
 
 FILES_${PN} = " \

@@ -22,6 +22,9 @@ IMAGE_INSTALL_remove = " \
     optee-linuxdriver-armtz \
     optee-client \
     libx11-locale \
+    wayland-kms \
+    wayland-kms-dev \
+    gles-user-module \
 "
 
 CORE_IMAGE_BASE_INSTALL_remove += "gtk+3-demo clutter-1.0-examples"

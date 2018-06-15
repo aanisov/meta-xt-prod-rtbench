@@ -257,8 +257,8 @@ PREFERRED_PROVIDER_virtual/libgles2 = "mesa"
 PREFERRED_PROVIDER_virtual/egl = "mesa"
 PREFERRED_PROVIDER_virtual/libgl = ""
 PREFERRED_PROVIDER_virtual/mesa = "mesa"
-PREFERRED_PROVIDER_libgbm = "libgbm"
-PREFERRED_PROVIDER_libgbm-dev = "libgbm"
+PREFERRED_PROVIDER_libgbm = "mesa"
+PREFERRED_PROVIDER_libgbm-dev = "mesa"
 
 # Enable Multimedia features
 #MACHINE_FEATURES_append = " multimedia"

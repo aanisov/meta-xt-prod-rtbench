@@ -1,10 +1,10 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-BRANCH = "yocto-3.7-migration"
+BRANCH = "pr_pv_drv_upstream_for_yocto_3_7_migration"
 SRCREV = "${AUTOREV}"
 
 SRC_URI = " \
-    git://github.com/xen-troops/linux.git;branch=${BRANCH} \
+    git://github.com/andr2000/linux.git;branch=${BRANCH} \
     file://defconfig \
   "
 do_deploy_append () {
