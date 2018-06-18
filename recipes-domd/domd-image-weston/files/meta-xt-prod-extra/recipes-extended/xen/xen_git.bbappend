@@ -8,7 +8,7 @@ XEN_REL_rcar = "4.11"
 PV = "${XEN_REL}.0+git${SRCPV}"
 SRCREV_rcar = "${AUTOREV}"
 
-SRC_URI_rcar = "git://github.com/aanisov/xen.git;protocol=https;branch=4.11-unstable"
+SRC_URI_rcar = "git://github.com/aanisov/xen.git;protocol=https;branch=4.11-unstable-rtbench"
 
 ################################################################################
 # Generic

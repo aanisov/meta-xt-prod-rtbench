@@ -8,7 +8,7 @@ PV = "${XEN_REL}.0+git${SRCPV}"
 SRCREV = "${AUTOREV}"
 
 SRC_URI = " \
-    git://github.com/aanisov/xen.git;protocol=https;branch=4.11-unstable \
+    git://github.com/aanisov/xen.git;protocol=https;branch=4.11-unstable-rtbench \
     file://0001-libxl-Add-DTB-compatible-list-to-config-file.patch \
     file://0002-libxl-Add-DTB-passthrough-nodes-list.patch \
 "
